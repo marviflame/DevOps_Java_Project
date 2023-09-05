@@ -1,12 +1,26 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: auth-marve-app
-  labels: 
+  name: marve-app
+  labels:
      app: marve-app
 
 spec:
-  replicas: 2 
+  replicas: 2
+  selector:
+    matchLabels:
+      app: marve-app
+
+  template:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marve-app
+  labels:
+     app: marve-app
+
+spec:
+  replicas: 2
   selector:
     matchLabels:
       app: marve-app
@@ -18,7 +32,7 @@ spec:
     spec:
       containers:
       - name: marve-app
-        image: auth/marve-app
+        image: marviflame89/marve-app
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
