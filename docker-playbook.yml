@@ -1,0 +1,32 @@
+---
+- hosts: kubernetes
+  user: ubuntu
+  tasks:
+
+   - name: copy Dockerfile into remote machine
+     copy:
+      src: Dockerfile
+      dest: .
+
+   - name: copy .war file into remote machine
+     copy:
+      src: webapp.war
+      dest: .
+
+   - name: stop the running container
+     command: docker stop marve-app-container
+     ignore_errors: True
+
+   - name: remove the running container
+     command: docker rm marve-app-container
+     ignore_errors: True
+
+   - name: remove the running image
+     command: docker rmi marve-app
+     ignore_errors: True
+
+   - name: create image from Dockerfile
+     command: docker build -t marve-app .
+
+   - name: create and run container
+     command: docker run -d -p 8080:8080 --name marve-app-container marve-app
