@@ -12,7 +12,7 @@ pipeline {
 
         stage ("Checkout From SCM") {
             steps {
-                git branch: 'main', credentialsId: 'marviflame', url: 'https://github.com/marviflame/OctoberProject.git'
+            git branch: 'main', credentialsId: 'marviflame', url: 'https://github.com/marviflame/OctoberProject.git'
             }   
         }
 
