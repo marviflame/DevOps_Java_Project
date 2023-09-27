@@ -1,3 +1,4 @@
+
 pipeline {
 
     agent any
@@ -27,4 +28,6 @@ pipeline {
                 sh 'mvn test'
             }   
         }
+    }    
+        
 }
