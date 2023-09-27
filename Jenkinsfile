@@ -2,12 +2,6 @@
 pipeline {
 
     agent any
-    tools {
-
-        java 'Java'
-        maven 'Maven'
-    }   
-
     stages {
 
         stage ("Cleanup Workspace") {
