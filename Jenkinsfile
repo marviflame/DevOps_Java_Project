@@ -12,7 +12,7 @@ pipeline {
 
         stage ("Checkout From SCM") {
             steps {
-            git branch: 'main', url: 'https://github.com/marviflame/OctoberProject.git'
+               git branch: 'main', url: 'https://github.com/marviflame/OctoberProject.git'
             }   
         }
 
@@ -28,15 +28,15 @@ pipeline {
             }   
         }
 
-        stage ("Sonarqube Analysis") {
-            steps {
-                script {
-                     withSonarQubeEnv(credentialsId: 'sonar_token') {
-                      sh 'mvn sonar:sonar'  
-                    }
-                }    
-            }
-        }    
+//         stage ("Sonarqube Analysis") {
+//             steps {
+//                 script {
+//                      withSonarQubeEnv(credentialsId: 'sonar_token') {
+//                       sh 'mvn sonar:sonar'  
+//                     }
+//                 }    
+//             }
+//         }    
 
-    }
-}
+//     }
+// }
