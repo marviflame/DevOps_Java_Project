@@ -13,7 +13,7 @@ pipeline {
 
         stage ("Checkout From SCM") {
             steps {
-               git branch: 'main', credentialsId: 'github_token', url: 'https://github.com/marviflame/OctoberProject.git'
+               git branch: 'main', credentialsId: 'github_token', url: 'https://github.com/marviflame/DevOps_Java_Project.git'
             }   
         }
 
