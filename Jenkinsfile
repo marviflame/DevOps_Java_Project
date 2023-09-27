@@ -17,11 +17,11 @@ pipeline {
             }   
         }
 
-       //  stage ("Build Application") {
-       //      steps {
-       //          sh 'mvn clean install'
-       //      }   
-       //  }
+        stage ("Build Application") {
+            steps {
+                sh 'clean install'
+            }   
+        }
         
        // stage ("Test Application") {
        //      steps {
