@@ -1,7 +1,7 @@
 
 pipeline {
 
-    agent any
+    agent 'Agent"
     stages {
 
         stage ("Cleanup Workspace") {
@@ -16,11 +16,6 @@ pipeline {
             }   
         }
 
-        stage ("Build Application") {
-            steps {
-                sh 'mvn clean package'
-            }   
-        }
     }    
         
 }
