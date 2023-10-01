@@ -1,7 +1,7 @@
 
 pipeline {
 
-    agent 'Agent"
+    agent 'Agent'
     stages {
 
         stage ("Cleanup Workspace") {
